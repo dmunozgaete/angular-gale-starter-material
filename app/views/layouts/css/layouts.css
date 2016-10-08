@@ -1,0 +1,176 @@
+md-dialog.md-dialog-fullscreen {
+  height: 97%;
+  width: 97%;
+  max-height: 97%;
+  max-width: 97%;
+  position: absolute;
+  top: 1.5%;
+  left: 1.5%;
+  border-radius: 0; }
+  md-dialog.md-dialog-fullscreen > md-dialog-actions {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px; }
+md-dialog > md-dialog-content > div > flex-loading,
+md-dialog > md-dialog-content > flex-loading {
+  margin-top: 20%; }
+
+.clickable {
+  cursor: pointer;
+  outline: none; }
+  .clickable > input,
+  .clickable > label {
+    cursor: pointer; }
+
+.default-layout button.big {
+  padding: 6px 6px;
+  font-size: 95%;
+  white-space: normal; }
+.default-layout primary-fab {
+  position: fixed;
+  left: 24px;
+  top: 28px;
+  width: 56px;
+  height: 56px;
+  display: inline-block;
+  z-index: 10; }
+  .default-layout primary-fab md-fab-trigger > button.md-button {
+    margin: 0px 8px 6px 8px; }
+  .default-layout primary-fab md-fab-trigger > .md-fab > md-icon,
+  .default-layout primary-fab md-fab-actions .md-fab > md-icon {
+    color: #fff !important; }
+  .default-layout primary-fab > .md-fab {
+    padding: 0px !important;
+    margin: 0px !important; }
+    .default-layout primary-fab > .md-fab > md-icon {
+      color: #fff !important; }
+  .default-layout primary-fab.md-tall {
+    top: 98px; }
+  .default-layout primary-fab.right {
+    right: 24px;
+    left: auto; }
+  .default-layout primary-fab.bottom {
+    bottom: 24px;
+    top: auto; }
+.default-layout page-title {
+  position: fixed;
+  z-index: 2;
+  left: 88px;
+  color: #fff;
+  font-size: 1.7em;
+  right: 16px;
+  top: 64px;
+  height: 64px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center; }
+.default-layout page-title.no-primary-fab {
+  left: 20px; }
+.default-layout md-content[ui-view] {
+  background-color: #fafafa;
+  height: 100%; }
+  .default-layout md-content[ui-view] > md-progress-linear {
+    left: 0px;
+    right: 0px;
+    position: fixed; }
+  .default-layout md-content[ui-view] > flex-loading {
+    min-height: 500px; }
+  .default-layout md-content[ui-view] md-content[table-content] {
+    background-color: transparent;
+    min-height: 505px;
+    box-shadow: none;
+    margin: 36px 0px 0px 0px;
+    /*
+        @include box-shadow(3px);
+    */ }
+    .default-layout md-content[ui-view] md-content[table-content].inset {
+      margin-top: 16px;
+      padding: 0px; }
+    .default-layout md-content[ui-view] md-content[table-content] md-toolbar {
+      min-height: 48px;
+      height: 48px;
+      background: none;
+      padding: 10px 10px 0px 10px; }
+      .default-layout md-content[ui-view] md-content[table-content] md-toolbar .md-toolbar-tools {
+        background-color: #Fff;
+        color: rgba(0, 0, 0, 0.87);
+        padding-left: 8px;
+        font-size: 17px; }
+        .default-layout md-content[ui-view] md-content[table-content] md-toolbar .md-toolbar-tools span i {
+          opacity: 0.6;
+          font-size: 0.8em; }
+        .default-layout md-content[ui-view] md-content[table-content] md-toolbar .md-toolbar-tools > button {
+          min-width: auto; }
+  .default-layout md-content[ui-view] md-content[form-content] {
+    background-color: transparent;
+    /* 
+        FIX: https://github.com/gpittarelli/Frontend/commit/54bd5cd72313d1fb07439c2c206c2b94cdd1e601 
+        FIX: https://github.com/angular/material/issues/6214
+    */ }
+    .default-layout md-content[ui-view] md-content[form-content] > *:first-child {
+      padding-top: 36px; }
+    .default-layout md-content[ui-view] md-content[form-content] button-pad {
+      display: block;
+      position: fixed;
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      padding: 16px;
+      height: 48px;
+      text-align: right;
+      background-color: #fbfbfb;
+      border-top: 1px solid #f3f3f3; }
+      .default-layout md-content[ui-view] md-content[form-content] button-pad md-spacer {
+        display: inline;
+        padding-left: 50px; }
+      .default-layout md-content[ui-view] md-content[form-content] button-pad button.big {
+        margin-top: 1px; }
+    .default-layout md-content[ui-view] md-content[form-content] input[disabled],
+    .default-layout md-content[ui-view] md-content[form-content] textarea[disabled] {
+      color: #888; }
+    .default-layout md-content[ui-view] md-content[form-content] md-input-container .md-errors-spacer {
+      min-height: 0; }
+    .default-layout md-content[ui-view] md-content[form-content] md-toolbar {
+      min-height: 48px;
+      height: 48px;
+      background: none;
+      padding: 10px 10px 0px 10px; }
+      .default-layout md-content[ui-view] md-content[form-content] md-toolbar .md-toolbar-tools {
+        background-color: #Fff;
+        color: rgba(0, 0, 0, 0.87);
+        padding-left: 8px;
+        font-size: 17px; }
+        .default-layout md-content[ui-view] md-content[form-content] md-toolbar .md-toolbar-tools span i {
+          opacity: 0.6;
+          font-size: 0.8em; }
+        .default-layout md-content[ui-view] md-content[form-content] md-toolbar .md-toolbar-tools > button {
+          min-width: auto; }
+.default-layout md-sidenav md-list {
+  outline-style: none;
+  padding: 0px; }
+  .default-layout md-sidenav md-list.category {
+    color: #fff; }
+    .default-layout md-sidenav md-list.category md-icon {
+      color: #fff; }
+    .default-layout md-sidenav md-list.category.md-primary.background {
+      background: #3f51b5; }
+  .default-layout md-sidenav md-list.toggled md-icon {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg); }
+  .default-layout md-sidenav md-list button md-icon {
+    margin-right: 16px !important; }
+
+/*# sourceMappingURL=layouts.css.map */

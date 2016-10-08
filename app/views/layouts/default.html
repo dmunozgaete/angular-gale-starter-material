@@ -1,0 +1,51 @@
+﻿<div layout-fill class="default-layout" layout="column">
+    <!-- LEFT SIDENAV -->
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2 " md-component-id="layout-nav-left">
+        <md-toolbar class="md-tall">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="al" ng-click="toogleMenu('layout-nav-left')">
+                    <md-icon md-svg-icon="navigation:menu"></md-icon>
+                </md-button>
+                <h2>
+                    <span></span>
+                </h2>
+            </div>
+        </md-toolbar>
+        <md-content>
+            <!-- Menu  -->
+            <md-list ng-repeat="category in config.menu">
+                <!-- Category -->
+                <md-list ng-click="toggleSection(category);" class="category md-primary background" ng-class="{'toggled' : category.open}">
+                    <md-list-item class="md-primary">
+                        <p>{{category.name}}</p>
+                        <md-icon class="chevron" md-svg-icon="navigation:expand_more"></md-icon>
+                    </md-list-item>
+                </md-list>
+                <!-- Category Item's -->
+                <div ng-show="category.open == true" ng-animate="'animate'">
+                    <md-list class="items">
+                        <md-list-item ng-click="navigateTo(item)" ng-repeat="item in category.items | orderBy:'+'">
+                            <md-icon md-svg-icon="{{item.icon}}"></md-icon>
+                            <p> {{item.name}} </p>
+                        </md-list-item>
+                    </md-list>
+                </div>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+    <!-- MAIN TOOLBAR -->
+    <md-toolbar class="md-tall md-whiteframe-z1" flex="initial">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="al" ng-click="toogleMenu('layout-nav-left')">
+                <md-icon md-svg-icon="navigation:menu"></md-icon>
+            </md-button>
+            <h2>
+                <span>Material Project Starter</span>
+            </h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <!-- CONTENT -->
+    <md-content ui-view name="content" flex>
+    </md-content>
+</div>

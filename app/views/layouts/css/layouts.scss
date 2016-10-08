@@ -1,0 +1,241 @@
+@import "../../../bundles/app/css/_flexbox";
+//-----------------------------
+// $mdDialog Service , add the class fullscreen when 
+// is setted in the configuration options,
+// for us, the fullscreen is % =)!
+//-----------------------------
+$primary_color: #3f51b5;
+$background_color: #fafafa;
+
+md-dialog {
+    &.md-dialog-fullscreen {
+        height: 97%;
+        width: 97%;
+        max-height: 97%;
+        max-width: 97%;
+        position: absolute;
+        top: 1.5%;
+        left: 1.5%;
+        border-radius: 0;
+        > md-dialog-actions {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+    }
+    > md-dialog-content {
+        > div > flex-loading,
+        > flex-loading {
+            margin-top: 20%;
+        }
+    }
+}
+
+.clickable {
+    cursor: pointer;
+    outline: none;
+    > input,
+    > label {
+        cursor: pointer;
+    }
+}
+
+//-----------------------------
+// LAYOUT: default-layout
+//-----------------------------
+.default-layout {
+    button {
+        &.big {
+            padding: 6px 6px;
+            font-size: 95%;
+            white-space: normal;
+        }
+    }
+    primary-fab {
+        position: fixed;
+        left: 24px;
+        top: 28px;
+        width: 56px;
+        height: 56px;
+        display: inline-block;
+        z-index: 10;
+        md-fab-trigger > button.md-button {
+            margin: 0px 8px 6px 8px
+        }
+        md-fab-trigger > .md-fab > md-icon,
+        md-fab-actions .md-fab > md-icon {
+            color: #fff !important;
+        }
+        > .md-fab {
+            padding: 0px !important;
+            margin: 0px !important;
+            > md-icon {
+                color: #fff !important;
+            }
+        }
+        &.md-tall {
+            top: 98px;
+        }
+        &.right {
+            right: 24px;
+            left: auto;
+        }
+        &.bottom {
+            bottom: 24px;
+            top: auto;
+        }
+    }
+    page-title {
+        position: fixed;
+        z-index: 2;
+        left: 88px;
+        color: #fff;
+        font-size: 1.7em;
+        right: 16px;
+        top: 64px;
+        height: 64px;
+        @include flexbox();
+        @include justify-content(flex-start);
+        @include align-items(center);
+    }
+    page-title.no-primary-fab {
+        left: 20px;
+    }
+    md-content[ui-view] {
+        background-color: $background_color;
+        height: 100%;
+        > md-progress-linear {
+            left: 0px;
+            right: 0px;
+            position: fixed;
+        }
+        > flex-loading {
+            min-height: 500px;
+        }
+        md-content {
+            &[table-content] {
+                background-color: transparent;
+                min-height: 505px;
+                box-shadow: none;
+                margin: 36px 0px 0px 0px;
+                /*
+                    @include box-shadow(3px);
+                */
+                &.inset {
+                    margin-top: 16px;
+                    padding: 0px;
+                }
+                md-toolbar {
+                    min-height: 48px;
+                    height: 48px;
+                    background: none;
+                    padding: 10px 10px 0px 10px;
+                    .md-toolbar-tools {
+                        background-color: #Fff;
+                        color: rgba(0, 0, 0, 0.87);
+                        padding-left: 8px;
+                        font-size: 17px;
+                        span {
+                            i {
+                                opacity: 0.6;
+                                font-size: 0.8em;
+                            }
+                        }
+                        > button {
+                            min-width: auto;
+                        }
+                    }
+                }
+            }
+            &[form-content] {
+                >*:first-child {
+                    padding-top: 36px;
+                }
+                background-color: transparent;
+                button-pad {
+                    display: block;
+                    position: fixed;
+                    bottom: 0px;
+                    right: 0px;
+                    left: 0px;
+                    padding: 16px;
+                    height: 48px;
+                    text-align: right;
+                    background-color: #fbfbfb;
+                    border-top: 1px solid #f3f3f3;
+                    md-spacer {
+                        display: inline;
+                        padding-left: 50px;
+                    }
+                    button {
+                        &.big {
+                            margin-top: 1px;
+                        }
+                    }
+                }
+                input[disabled],
+                textarea[disabled] {
+                    color: #888;
+                }
+                /* 
+                    FIX: https://github.com/gpittarelli/Frontend/commit/54bd5cd72313d1fb07439c2c206c2b94cdd1e601 
+                    FIX: https://github.com/angular/material/issues/6214
+                */
+                md-input-container {
+                    .md-errors-spacer {
+                        min-height: 0;
+                    }
+                }
+                md-toolbar {
+                    min-height: 48px;
+                    height: 48px;
+                    background: none;
+                    padding: 10px 10px 0px 10px;
+                    .md-toolbar-tools {
+                        background-color: #Fff;
+                        color: rgba(0, 0, 0, 0.87);
+                        padding-left: 8px;
+                        font-size: 17px;
+                        span {
+                            i {
+                                opacity: 0.6;
+                                font-size: 0.8em;
+                            }
+                        }
+                        > button {
+                            min-width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    md-sidenav {
+        md-list {
+            outline-style: none;
+            padding: 0px;
+            &.category {
+                color: #fff;
+                md-icon {
+                    color: #fff;
+                }
+                &.md-primary.background {
+                    background: $primary_color;
+                }
+            }
+            &.toggled {
+                md-icon {
+                    transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                }
+            }
+            button {
+                md-icon {
+                    margin-right: 16px !important;
+                }
+            }
+        }
+    }
+    md-sidenav {}
+}
